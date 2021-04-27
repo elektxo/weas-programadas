@@ -6,7 +6,7 @@ import random
 
 insulto = ("daltonica", "anorexica", "mal parida", "lamecalvas", "autista", "manca", "desenfocado")
 sustantivo = ("puta", "foca", "mamarracha", "morsa", "orca", "araña", "semaforo", "zorra", "elefante", "retrovisor")
-insultofinal = ("Malu", random.choice(sustantivo), random.choice(insulto))
+insultofinal = ("Malu"+" "+random.choice(sustantivo)+" "+random.choice(insulto))
 
 
 #Abro el objeto texto y lo escribo
@@ -29,3 +29,9 @@ except:
 
 #Creando un tweet
 api.update_status(archivo.read())
+
+#Cierra el enlace con el archivo
+archivo.close()
+
+#Limpia los archivos residuales
+os.remove("insulto.txt")
