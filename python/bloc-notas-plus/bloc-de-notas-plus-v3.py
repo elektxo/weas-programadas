@@ -21,7 +21,7 @@ def new_file():
 
 def open_file():
     global url_file
-    url_file = f.askopenfilename(initialdir = '.', filetype = (("Archivos de texto", "*.txt"),), title = "Abrir archivo")
+    url_file = f.askopenfilename(initialdir = '.', filetypes = (("Archivos de texto", "*.txt"),), title = "Abrir archivo")
     if url_file != "":
         file = open(url_file, 'r')
         content = file.read()
